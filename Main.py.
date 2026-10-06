@@ -1,10 +1,28 @@
+
+from datetime import datetime
+
 print("JARVIS iniciado.")
+print("Digite 'ajuda' para ver os comandos.")
 
 while True:
-    mensagem = input("Você: ")
+    mensagem = input("Você: ").strip().lower()
 
-    if mensagem.lower() in ["sair", "exit", "quit"]:
-        print("JARVIS: Encerrando.")
+    if mensagem == "sair":
+        print("JARVIS: Encerrando sistema.")
         break
 
-    print("JARVIS:", mensagem)
+    elif mensagem == "ajuda":
+        print("JARVIS: Comandos disponíveis:")
+        print("- hora")
+        print("- olá")
+        print("- sair")
+
+    elif mensagem == "hora":
+        hora = datetime.now().strftime("%H:%M:%S")
+        print(f"JARVIS: Agora são {hora}.")
+
+    elif mensagem in ["olá", "ola"]:
+        print("JARVIS: Olá. Sistemas operacionais.")
+
+    else:
+        print("JARVIS: Comando não reconhecido.")
