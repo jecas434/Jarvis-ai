@@ -1,0 +1,10 @@
+print("JARVIS iniciado.")
+
+while True:
+    mensagem = input("Você: ")
+
+    if mensagem.lower() in ["sair", "exit", "quit"]:
+        print("JARVIS: Encerrando.")
+        break
+
+    print("JARVIS:", mensagem)
